@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "54c450f8_894d9097",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T20:00:28Z",
+      "side": 1,
+      "message": "Do you change the base image to another? Or you mean the dbus package installation using apt-get?",
+      "parentUuid": "d388a905_2174b87e",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13847292_a63a8d80",
         "filename": "Dockerfile",
         "patchSetId": 1
@@ -100,6 +118,24 @@
       "side": 1,
       "message": "It\u0027s a dependency for bcrypt in knot-cloud",
       "parentUuid": "96df9ed8_5693d28d",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "573f8418_798cdf4c",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T20:00:28Z",
+      "side": 1,
+      "message": "I see. I think we won\u0027t need it anymore.",
+      "parentUuid": "fab9f114_cfca6270",
       "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
