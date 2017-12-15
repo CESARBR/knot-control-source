@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "74530408_eb6301c0",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-15T20:11:03Z",
+      "side": 1,
+      "message": "Just dbus package in apt-get. But I\u0027m thinking how we can use an application client with solita image if it is running in background. Can we run a command node without get in the container?",
+      "parentUuid": "54c450f8_894d9097",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13847292_a63a8d80",
         "filename": "Dockerfile",
         "patchSetId": 1
@@ -83,6 +101,24 @@
       "writtenOn": "2017-12-15T19:30:06Z",
       "side": 1,
       "message": "Can we remove git if we use fake services?",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21fa34aa_6f296ef3",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-15T20:11:03Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "13847292_a63a8d80",
       "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
