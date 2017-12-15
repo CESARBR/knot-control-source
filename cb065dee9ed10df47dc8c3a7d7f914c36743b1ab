@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb4bfadd_5a8b6a32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Add docker container",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d9197a4_29c5e111",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "I couldn\u0027t execute a DBus example using system bus with this image, can you?\n\nIf not, let\u0027s using the same base container used in the webui",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13847292_a63a8d80",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Can we remove git if we use fake services?",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "96df9ed8_5693d28d",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "what is gcc, g++ and make being used for?",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9420c7f_5e4bf0d9",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Let\u0027s take a different approach about mongo. Instead of running it inside the container, we\u0027ll use a mongo container, but leave it to another patch.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c8ba40b_0183b13d",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Without mongo, this is not required anymore.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "323c5672_028e9aea",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Let\u0027s use fake services instead.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b88726d3_1baee8e7",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Use 644 to gatewayConfig.json, 666 to keys.json and 755 to the other scripts.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8a48806_168a20c1",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "If we use solita\u0027s base image, we need to initialize the system as done in the webui:\n- install and enable a systemd service representing knot-control\n- run /sbin/init",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9ab1ca9_7a4322c5",
+        "filename": "build-docker.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "These commands require the developer to have knot-service-source and knot-hal-source downloaded and built. The idea is to developer in a independent way.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb4268d5_c6f908b1",
+        "filename": "build-docker.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "It is better to use docker-compose than to create a script to create the container. With docker-compose we can specify a lot of other options that might be required. \n\nSee docker-compose.yml in knot-gateway-webui for an example.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3570027c_53f42b5a",
+        "filename": "scripts/knot-fog",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Instead of multiples scripts, we can have one script that stays in a while loop. In the container you copy it with different names.\n\nThis script can live in the root directory and be named docker-knot-service, for instance (as we are doing in webui).",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f056e46e_3c4e9ecc",
+        "filename": "scripts/knot-web",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-15T19:30:06Z",
+      "side": 1,
+      "message": "Remove it. See approach in knot-fog\u0027s comments.",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
