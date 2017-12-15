@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "d388a905_2174b87e",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-15T19:54:24Z",
+      "side": 1,
+      "message": "Actually I\u0027ve removed the package that was using dbus, in the next patch I would update this file",
+      "parentUuid": "1d9197a4_29c5e111",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13847292_a63a8d80",
         "filename": "Dockerfile",
         "patchSetId": 1
@@ -64,6 +82,24 @@
       "writtenOn": "2017-12-15T19:30:06Z",
       "side": 1,
       "message": "what is gcc, g++ and make being used for?",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab9f114_cfca6270",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-15T19:54:24Z",
+      "side": 1,
+      "message": "It\u0027s a dependency for bcrypt in knot-cloud",
+      "parentUuid": "96df9ed8_5693d28d",
       "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
