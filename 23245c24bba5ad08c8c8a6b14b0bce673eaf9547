@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40980dad_a34608bd",
+        "filename": "Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-18T18:23:33Z",
+      "side": 1,
+      "message": "I forgot to remove this line. Generating another patch",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "23245c24bba5ad08c8c8a6b14b0bce673eaf9547",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
