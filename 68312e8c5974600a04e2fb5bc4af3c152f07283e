@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5312b0a2_749d1f96",
+        "filename": "Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-18T18:03:15Z",
+      "side": 1,
+      "message": "Let\u0027s ignore lorad for now, it isn\u0027t being used.",
+      "revId": "68312e8c5974600a04e2fb5bc4af3c152f07283e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25634f33_1f34c0cd",
+        "filename": "docker-knot-control.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-18T18:03:15Z",
+      "side": 1,
+      "message": "Let\u0027s keep knot-control an empty service for now (it can be the same dummy script we are using for the others).\n\nDon\u0027t worry about initializing the other services. There is a chance that this service will initialize the others on demand.",
+      "revId": "68312e8c5974600a04e2fb5bc4af3c152f07283e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1621ccb8_d4727e7d",
+        "filename": "scripts/docker-knot-service.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-18T18:03:15Z",
+      "side": 1,
+      "message": "Move this script to the root folder, besides the other docker-* files.",
+      "revId": "68312e8c5974600a04e2fb5bc4af3c152f07283e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
