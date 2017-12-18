@@ -1,0 +1,10 @@
+[Unit]
+Description=KNoT Control
+
+[Service]
+ExecStart=/usr/local/bin/knotctld
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
