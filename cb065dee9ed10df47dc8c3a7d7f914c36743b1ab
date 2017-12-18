@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "aa535c64_ee2dd315",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-18T14:08:20Z",
+      "side": 1,
+      "message": "Yes, we bring the service up in the image, as the main application, and use docker exec to execute CLI commands after that.",
+      "parentUuid": "74530408_eb6301c0",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13847292_a63a8d80",
         "filename": "Dockerfile",
         "patchSetId": 1
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "yes",
       "parentUuid": "13847292_a63a8d80",
+      "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f06ae12e_8864a0d4",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-18T14:08:20Z",
+      "side": 1,
+      "message": "Let\u0027s remove it then.",
+      "parentUuid": "21fa34aa_6f296ef3",
       "revId": "cb065dee9ed10df47dc8c3a7d7f914c36743b1ab",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
