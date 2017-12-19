@@ -16,7 +16,9 @@ RUN apt-get update \
 # install modules
 WORKDIR /usr/local/bin/knot-control-source
 COPY package.json .
-
+COPY src .
+RUN npm install --production
+COPY org.cesar.knot.control.conf /etc/dbus-1/system.d/org.cesar.knot.control.conf
 # install configuration files
 RUN mkdir -p /etc/knot
 COPY ./config/gatewayConfig.json ./config/keys.json \

@@ -2,7 +2,7 @@
 #
 # Run KNoT Control
 #
-
+# node /usr/local/bin/knot-control-source/server.js &
 PIDFILE=/tmp/knotctl.pid
 PID=`cat $PIDFILE`
 
