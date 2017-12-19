@@ -8,14 +8,20 @@ RUN apt-get update \
 # add node 6.x repo
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
+# add yarn repo
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 # install build tools and dependencies
 RUN apt-get update \
  && apt-get install -y \
-      nodejs dbus
+      nodejs dbus yarn
 
 # install modules
 WORKDIR /usr/local/bin/knot-control-source
 COPY package.json .
+COPY org.cesar.knot.control.conf /etc/dbus-1/system.d/org.cesar.knot.control.conf
+RUN npm_config_tmp=/tmp TMP=/tmp yarn
 
 # install configuration files
 RUN mkdir -p /etc/knot
