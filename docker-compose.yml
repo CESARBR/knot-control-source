@@ -13,9 +13,9 @@ services:
       - '8080:8080'
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - .:/usr/local/bin/knot-web-app
-      - /usr/local/bin/knot-web-app/node_modules
-      - /usr/local/bin/knot-web-app/www
+      - .:/usr/local/bin/knot-control-source
+      - /usr/local/bin/knot-control-source/node_modules
+      - /usr/local/bin/knot-control-source/bin
     environment:
       MONGODB_URI: 'mongodb://database/knot_fog'
   database:
