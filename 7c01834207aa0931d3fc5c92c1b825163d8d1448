@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c3742ed_16677378",
+        "filename": "docker-knot-control.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-19T16:55:07Z",
+      "side": 1,
+      "message": "This line must be uncommented when I discovery how to give access environment variable from docker to systemd",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eea9d90a_a5357fea",
+        "filename": "src/factoryReset/cleanDatabase.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-19T16:55:07Z",
+      "side": 1,
+      "message": "It is showing a error: unhandled promise rejection",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
