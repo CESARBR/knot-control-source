@@ -2,6 +2,125 @@
   "comments": [
     {
       "key": {
+        "uuid": "dee9539c_99ac58cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "You can say directly here what you are adding. Who is reading the commit message doesn\u0027t know which one is the first feature.\n\nIt could be something like \"Add database cleanup\". In the rest of the commit message you can explain why it is needed.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93ac3949_a6fffa0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "This is what could go the commit message title/header.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bebec95_f345795f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "What does the .conf file mean?",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "641f35af_57bf44c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "Who is viewing the history already know that you are updating the Dockerfile, there is no need to say it here. What would like to say that you added to this file?",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39f3edcc_a07b2788",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "It is safer to transpile our source than to use it directly. This way we can use newer JS features and it still will work on our environment. The repo is already configured to use Babel (see package.json\u0027s scripts).\n\nI was thinking that we could have the following folder structure:\nsrc/daemon: our DBus server (knotctld)\nsrc/cli: our CLI application (knotctl)\nbin: the output folder.\n\nAlso, instead of copying the output folder (bin) to the container, we should use the folder mapping defined in the docker-compose.yml. This way you can recompile the daemon without having to bring down the container.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "319d8760_86683d5e",
+        "filename": "Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "Let\u0027s use yarn, it is faster and it is always up. See webui\u0027s Dockerfile for yarn installation.\n\nAlso, this is the development environment, we shouldn\u0027t run as production.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64fd894d_c41ed3d9",
+        "filename": "docker-knot-control.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "This is script now can be similar to webui\u0027s:\n\n#!/bin/sh\n\ncd /usr/local/bin/knot-control-source\nyarn start",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c3742ed_16677378",
         "filename": "docker-knot-control.sh",
         "patchSetId": 1
@@ -13,6 +132,91 @@
       "writtenOn": "2017-12-19T16:55:07Z",
       "side": 1,
       "message": "This line must be uncommented when I discovery how to give access environment variable from docker to systemd",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ba9706f_6d5826b0",
+        "filename": "docker-knot-control.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "Now that we have the daemon, remove this and the following lines.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a10b6751_ccb61344",
+        "filename": "package.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "I know this was modified by npm/yarn, but could you move it to before devDependencies? It will be easier to read, and once dependencies is created in the package.json, it won\u0027t be moved.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2493fb4e_e8d9c311",
+        "filename": "src/client.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "As I suggested in another file, we could use the src/cli folder for the client.\n\nIt is common to call the main file index.js. It allows one to execute \"node src/cli\" (it doesn\u0027t need to reference the main file.\n\nAlso, we can follow a similar approach of the cloud\u0027s CLI application.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "acb2f08a_a10b2929",
+        "filename": "src/factoryReset/cleanDatabase.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "Let\u0027s use config package to read this value. You can check how it is done in the webui.",
+      "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3697b9c8_9cc580d1",
+        "filename": "src/factoryReset/cleanDatabase.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2017-12-19T20:26:36Z",
+      "side": 1,
+      "message": "We need to clean knot_web as well.\n\nPut the database names in the config files. We\u0027ll have to match the names that are used in development and production environments.",
       "revId": "7c01834207aa0931d3fc5c92c1b825163d8d1448",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
