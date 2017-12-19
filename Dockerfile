@@ -16,7 +16,9 @@ RUN apt-get update \
 # install modules
 WORKDIR /usr/local/bin/knot-control-source
 COPY package.json .
-
+COPY src .
+RUN npm install --production
+COPY org.cesar.knot.control.conf /etc/dbus-1/system.d/org.cesar.knot.control.conf
 # install configuration files
 RUN mkdir -p /etc/knot
 COPY ./config/gatewayConfig.json ./config/keys.json \
@@ -25,6 +27,8 @@ RUN chmod 666 /etc/knot/keys.json
 RUN chmod 644 /etc/knot/gatewayConfig.json
 RUN chmod 755 /etc/knot/start.sh /etc/knot/stop.sh
 
+RUN mkdir -p config
+COPY ./config/development.json ./config/development.json
 # setup fake scripts
 # knot-fog
 COPY ./docker-knot-service.sh /usr/local/bin/knot-fog

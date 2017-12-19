@@ -24,5 +24,10 @@
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "dependencies": {
+    "config": "^1.28.1",
+    "dbus-native": "^0.2.3",
+    "mongodb": "^3.0.0-rc0"
+  }
 }

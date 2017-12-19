@@ -1,0 +1,7 @@
+{
+    "mongodb": {
+      "host": "database",
+      "port": 27017,
+      "db": "knot_fog"
+    }
+}
