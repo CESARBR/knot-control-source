@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "afd65b62_0518fee2",
+        "filename": "Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2017-12-21T14:28:18Z",
+      "side": 1,
+      "message": "Sorry. I forget to commit the removal of this line",
+      "revId": "038bfd0ceedfa4dc14a462a085664c6f69011a16",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
