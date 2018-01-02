@@ -1,13 +1,9 @@
 #!/bin/bash
 #
-# Run KNoT Control
+# Run KNoT Control Daemon
 #
 
-PIDFILE=/tmp/knotctl.pid
-PID=`cat $PIDFILE`
-
-while [ -e /proc/$PID ]
+while :
 do
-	#Wait
 	sleep 1
 done

@@ -13,12 +13,6 @@ services:
       - '8080:8080'
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - .:/usr/local/bin/knot-web-app
-      - /usr/local/bin/knot-web-app/node_modules
-      - /usr/local/bin/knot-web-app/www
-    environment:
-      MONGODB_URI: 'mongodb://database/knot_fog'
-  database:
-    image: mongo
-    ports:
-      - "27017:27017"
+      - .:/usr/local/bin/knot-control
+      - /usr/local/bin/knot-control/node_modules
+      - /usr/local/bin/knot-control/bin
