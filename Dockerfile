@@ -15,16 +15,18 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 # install build tools and dependencies
 RUN apt-get update \
  && apt-get install -y \
-      nodejs yarn dbus
+      nodejs yarn build-essential pkgconf dbus libdbus-1-dev
 
 # install modules
 WORKDIR /usr/local/bin/knot-control
 COPY package.json .
+RUN yarn
 
-# install init script
+# install init script & DBus configuration
 COPY ./docker-knot-control.service /lib/systemd/system/knotctl.service
 COPY ./docker-knot-control.sh /usr/local/bin/knotctld
 RUN chmod +x /usr/local/bin/knotctld
+COPY ./br.org.cesar.knot1.conf /etc/dbus-1/system.d/br.org.cesar.knot1.conf
 RUN systemctl enable knotctl
 
 CMD ["/bin/bash", "-c", "exec  /sbin/init --log-target=journal 3>&1"]
