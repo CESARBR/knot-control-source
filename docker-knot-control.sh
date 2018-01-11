@@ -1,9 +1,4 @@
-#!/bin/bash
-#
-# Run KNoT Control Daemon
-#
+#!/bin/sh
 
-while :
-do
-	sleep 1
-done
+cd /usr/local/bin/knot-control
+yarn run start:dev_daemon
