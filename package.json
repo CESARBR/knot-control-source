@@ -9,6 +9,7 @@
     "build": "babel src --out-dir bin",
     "test": "babel-tape-runner test/services/**/*.js test/interactors/**/*.js test/infrastructure/**/*.js",
     "start": "node bin/daemon",
+    "start:dev_cli": "babel-node src/cli",
     "start:dev_daemon": "babel-watch src/daemon"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
   "dependencies": {
     "dbus": "^1.0.2",
     "enumify": "^1.0.4",
-    "fs-extra": "^5.0.0"
+    "fs-extra": "^5.0.0",
+    "yargs": "^10.1.1"
   }
 }
