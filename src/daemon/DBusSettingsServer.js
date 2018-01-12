@@ -50,6 +50,15 @@ class DBusSettingsServer {
           done(dbusErr);
         }
       },
+      setter: async (address, done) => {
+        try {
+          await this.settingsApi.configureCloud(address);
+          done();
+        } catch (e) {
+          const dbusErr = createDBusError(e);
+          done(dbusErr);
+        }
+      },
     });
 
     iface.update();
