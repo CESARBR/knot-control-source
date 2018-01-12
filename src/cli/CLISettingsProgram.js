@@ -16,6 +16,18 @@ class CLISettingsProgram {
           } catch (err) {
             console.error(err.message);
           }
+        })
+        .command('cloud', 'Gets the cloud configuration', {}, async () => {
+          try {
+            const configuration = await this.settingsApi.getCloud();
+            if (configuration) {
+              console.log(`${configuration.hostname}:${configuration.port}`);
+            } else {
+              console.log('Not configured');
+            }
+          } catch (err) {
+            console.error(err.message);
+          }
         }))
       .demandCommand()
       .strict()
