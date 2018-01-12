@@ -39,6 +39,19 @@ class DBusSettingsServer {
       },
     });
 
+    iface.addProperty('Cloud', {
+      type: dbus.Define(Object),
+      getter: async (done) => {
+        try {
+          const configuration = await this.settingsApi.getCloud();
+          done(null, configuration);
+        } catch (e) {
+          const dbusErr = createDBusError(e);
+          done(dbusErr);
+        }
+      },
+    });
+
     iface.update();
   }
 }
