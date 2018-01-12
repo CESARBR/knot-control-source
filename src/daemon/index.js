@@ -1,5 +1,6 @@
 // Domain
 import IsReadyInteractor from 'interactors/IsReadyInteractor';
+import GetCloudInteractor from 'interactors/GetCloudInteractor';
 import SettingsService from 'services/SettingsService';
 
 // Infrastructure
@@ -13,7 +14,8 @@ const SETTINGS_FILE = './data/config.json';
 const settingsStore = new JsonSettingsStore(SETTINGS_FILE);
 const settingsStoreInitializer = new JsonSettingsStoreInitializer(SETTINGS_FILE);
 const isReadyInteractor = new IsReadyInteractor(settingsStore);
-const settingsService = new SettingsService(isReadyInteractor);
+const getCloudInteractor = new GetCloudInteractor(settingsStore);
+const settingsService = new SettingsService(isReadyInteractor, getCloudInteractor);
 const dbusSettingsAPI = new DBusSettingsAPI(settingsService);
 const dbusSettingsServer = new DBusSettingsServer(dbusSettingsAPI);
 
