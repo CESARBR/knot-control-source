@@ -22,6 +22,30 @@
       "revId": "3e02a763e1faafe3cf2f465c844daf8c6be49ac9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "275a0daf_d917c04c",
+        "filename": "br.org.cesar.knot1.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-12T19:52:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "341fc086_552abdad",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "3e02a763e1faafe3cf2f465c844daf8c6be49ac9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
