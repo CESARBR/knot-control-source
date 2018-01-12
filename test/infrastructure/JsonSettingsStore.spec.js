@@ -83,3 +83,39 @@ createTest(configDataWithState)(
     t.end();
   },
 );
+
+createTest(configDataWithState)(
+  'setCloud() writes cloud object on the file',
+  async (t, settingsStore) => {
+    const address = new Address('localhost', 3000);
+    await settingsStore.setCloud(address);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.true(fileData.cloud);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'setCloud() writes cloud object on the file with the address contents',
+  async (t, settingsStore) => {
+    const address = new Address('localhost', 3000);
+    await settingsStore.setCloud(address);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.cloud, address);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateCloud)(
+  'setCloud() update the cloud object if it exists',
+  async (t, settingsStore) => {
+    const address = new Address('remotehost', 3001);
+    await settingsStore.setCloud(address);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.cloud, address);
+    t.end();
+  },
+);
