@@ -29,6 +29,15 @@ class CLISettingsProgram {
             console.error(err.message);
           }
         }))
+      .command('set <property>', 'Sets the property value', _yargs => _yargs
+        .command('cloud <hostname> <port>', 'Sets the cloud configuration', {}, async (argv) => {
+          try {
+            await this.settingsApi.configureCloud(argv.hostname, argv.port);
+            console.log('Done');
+          } catch (err) {
+            console.error(err.message);
+          }
+        }))
       .demandCommand()
       .strict()
       .argv;

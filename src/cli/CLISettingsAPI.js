@@ -1,3 +1,5 @@
+import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+
 class CLISettingsAPI {
   constructor(settingsService) {
     this.settingsService = settingsService;
@@ -9,6 +11,11 @@ class CLISettingsAPI {
 
   async getCloud() {
     return this.settingsService.getCloud();
+  }
+
+  async configureCloud(hostname, port) {
+    const request = new ConfigureCloudRequest(hostname, port);
+    await this.settingsService.configureCloud(request);
   }
 }
 
