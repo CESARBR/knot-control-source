@@ -8,6 +8,36 @@ function createDBusError(error) {
   return new dbus.Error(`${SERVICE_NAME}.${error.name}`, error.message);
 }
 
+async function executeMethod(done, method, ...args) {
+  try {
+    const result = await method(...args);
+    done(null, result);
+  } catch (e) {
+    const dbusErr = createDBusError(e);
+    done(dbusErr);
+  }
+}
+
+function createGetter(getterImpl) {
+  return async (done) => {
+    await executeMethod(done, getterImpl);
+  };
+}
+
+function createSetter(setterImpl) {
+  return async (value, done) => {
+    await executeMethod(done, setterImpl, value);
+  };
+}
+
+function createProperty(iface, name, type, getter, setter) {
+  iface.addProperty(name, {
+    type: dbus.Define(type),
+    getter: getter ? createGetter(getter) : undefined,
+    setter: setter ? createSetter(setter) : undefined,
+  });
+}
+
 class DBusSettingsServer {
   constructor(settingsApi) {
     this.settingsApi = settingsApi;
@@ -20,26 +50,27 @@ class DBusSettingsServer {
 
     const service = dbus.registerService('system', SERVICE_NAME);
     const object = service.createObject(SETTINGS_OBJECT_PATH);
-    this.createInterface(object);
+    await this.createSettingsInterface(object);
   }
 
-  async createInterface(object) {
-    const iface = object.createInterface(SETTINGS_INTERFACE_NAME);
+  async createSettingsInterface(object) {
+    const settingsInterface = object.createInterface(SETTINGS_INTERFACE_NAME);
 
-    iface.addProperty('Ready', {
-      type: dbus.Define(Boolean),
-      getter: async (done) => {
-        try {
-          const isReady = await this.settingsApi.isReady();
-          done(null, isReady);
-        } catch (e) {
-          const dbusErr = createDBusError(e);
-          done(dbusErr);
-        }
-      },
-    });
+    createProperty(
+      settingsInterface,
+      'Ready',
+      Boolean,
+      this.settingsApi.isReady.bind(this.settingsApi),
+    );
 
-    iface.update();
+    createProperty(
+      settingsInterface,
+      'Cloud',
+      Object,
+      this.settingsApi.getCloud.bind(this.settingsApi),
+    );
+
+    settingsInterface.update();
   }
 }
 
