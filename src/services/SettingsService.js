@@ -1,10 +1,15 @@
 class SettingsService {
-  constructor(isReadyInteractor) {
+  constructor(isReadyInteractor, getCloudInteractor) {
     this.isReadyInteractor = isReadyInteractor;
+    this.getCloudInteractor = getCloudInteractor;
   }
 
   async isReady() {
     return this.isReadyInteractor.execute();
+  }
+
+  async getCloud() {
+    return this.getCloudInteractor.execute();
   }
 }
 
