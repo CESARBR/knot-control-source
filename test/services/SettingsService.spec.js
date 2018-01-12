@@ -2,6 +2,7 @@ import tape from 'tape';
 import around from 'tape-around';
 import sinon from 'sinon';
 import SettingsService from 'services/SettingsService';
+import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
 import Address from 'entities/Address';
 
 const test = around(tape)
@@ -12,7 +13,14 @@ const test = around(tape)
     const getCloudInteractor = {
       execute: sinon.stub().resolves(new Address('localhost', 3000)),
     };
-    const settingsService = new SettingsService(isReadyInteractor, getCloudInteractor);
+    const configureCloudInteractor = {
+      execute: sinon.stub().resolves(),
+    };
+    const settingsService = new SettingsService(
+      isReadyInteractor,
+      getCloudInteractor,
+      configureCloudInteractor,
+    );
     t.next(settingsService);
   });
 
@@ -45,5 +53,36 @@ test('getCloud() returns Address returned by GetCloudInteractor', async (t, sett
   const actualAddress = await settingsService.getCloud();
 
   t.deepEqual(actualAddress, expectedAddress);
+  t.end();
+});
+
+test('configureCloud() calls ConfigureCloudInteractor.execute()', async (t, settingsService) => {
+  const request = new ConfigureCloudRequest('localhost', 3000);
+  await settingsService.configureCloud(request);
+
+  t.true(settingsService.configureCloudInteractor.execute.called);
+  t.end();
+});
+
+test(
+  'configureCloud() calls ConfigureCloudInteractor.execute() with request',
+  async (t, settingsService) => {
+    const request = new ConfigureCloudRequest('localhost', 3000);
+    await settingsService.configureCloud(request);
+
+    const actualRequest = settingsService.configureCloudInteractor.execute.getCall(0).args[0];
+    t.deepEqual(actualRequest, request);
+    t.end();
+  },
+);
+
+test('configureCloud() validates request', async (t, settingsService) => {
+  try {
+    await settingsService.configureCloud();
+    t.fail('should throw');
+  } catch (e) {
+    t.pass('should throw');
+  }
+
   t.end();
 });
