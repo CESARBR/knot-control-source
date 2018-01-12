@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4aae0b3e_4e579dbd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-01-12T14:17:02Z",
+      "side": 1,
+      "message": "Break line on the guide (according to 50/72 rule).",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 80
+      },
+      "revId": "ff22fd118374617caff706e60a79989bd9b69392",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
