@@ -23,8 +23,25 @@ class CLISettingsProgram {
   async run() {
     yargs
       .command('get <property>', 'Gets the property value', _yargs => _yargs
-        .command('ready', 'Gets whether this gateway is ready', {}, createHandler(this.isReady.bind(this)))
-        .command('cloud', 'Gets the cloud configuration', {}, createHandler(this.getCloud.bind(this))))
+        .command(
+          'ready',
+          'Gets whether this gateway is ready',
+          {},
+          createHandler(this.isReady.bind(this)),
+        )
+        .command(
+          'cloud',
+          'Gets the cloud configuration',
+          {},
+          createHandler(this.getCloud.bind(this)),
+        ))
+      .command('set <property>', 'Sets the property value', _yargs => _yargs
+        .command(
+          'cloud <hostname> <port>',
+          'Sets the cloud configuration',
+          {},
+          createHandler(this.setCloud.bind(this)),
+        ))
       .demandCommand()
       .strict()
       .argv;
@@ -42,6 +59,11 @@ class CLISettingsProgram {
     } else {
       console.log('Not configured');
     }
+  }
+
+  async setCloud(args) {
+    await this.settingsApi.configureCloud(args.hostname, args.port);
+    console.log('Done');
   }
 }
 /* eslint-enable */
