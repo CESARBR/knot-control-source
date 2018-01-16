@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8f1d41_ce5c960b",
+        "filename": "src/cli/CLISettingsProgram.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T17:01:21Z",
+      "side": 1,
+      "message": "I\u0027d rather create a method for each CLI call.",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 39,
+        "endChar": 11
+      },
+      "revId": "b4b17d670c111b90cd67174351bf97ab278500a9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
