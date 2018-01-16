@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "58b70171_eb85f7ac",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:26:23Z",
+      "side": 1,
+      "message": "Long line. Gerrit is configured to limit code up to 100 columns.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 107
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2478f95_130e1954",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:26:23Z",
+      "side": 1,
+      "message": "Long line.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 119
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "739073ad_678b0849",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:26:23Z",
+      "side": 1,
+      "message": "Long line.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 120
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "05196ee1_05069cf4",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:26:23Z",
+      "side": 1,
+      "message": "Long line.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 134
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
