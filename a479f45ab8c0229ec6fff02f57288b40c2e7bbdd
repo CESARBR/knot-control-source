@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "938165cc_5d61a3ec",
+        "filename": "src/daemon/DBusSettingsServer.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:31:24Z",
+      "side": 1,
+      "message": "Same code from \u0027Ready\u0027 property. And probably it will be repeated again for every new property. Can\u0027t we extract a method from it?",
+      "range": {
+        "startLine": 48,
+        "startChar": 9,
+        "endLine": 51,
+        "endChar": 9
+      },
+      "revId": "a479f45ab8c0229ec6fff02f57288b40c2e7bbdd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
