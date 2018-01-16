@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23b819c5_007c7ef4",
+        "filename": "src/cli/CLISettingsProgram.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:40:07Z",
+      "side": 1,
+      "message": "I think it\u0027s better to create a method to handle each CLI call.",
+      "range": {
+        "startLine": 21,
+        "startChar": 9,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "6abb12e02f782a581343cb7cd342b9e3d4e50b7d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
