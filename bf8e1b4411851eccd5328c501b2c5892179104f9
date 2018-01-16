@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ec5212f_db129a89",
+        "filename": "src/interactors/ConfigureCloudInteractor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:49:10Z",
+      "side": 1,
+      "message": "Long line.",
+      "range": {
+        "startLine": 12,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 106
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "114757c8_76507735",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:49:10Z",
+      "side": 1,
+      "message": "t.fail() ?",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 53
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f153c0a_96e4eece",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:49:10Z",
+      "side": 1,
+      "message": "t.fail() ?",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 53
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "697cd5b0_ec7f533c",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-16T16:49:10Z",
+      "side": 1,
+      "message": "t.fail() ?",
+      "range": {
+        "startLine": 70,
+        "startChar": 5,
+        "endLine": 70,
+        "endChar": 53
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
