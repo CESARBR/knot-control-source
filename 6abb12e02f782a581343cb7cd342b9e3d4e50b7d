@@ -22,6 +22,30 @@
       "revId": "6abb12e02f782a581343cb7cd342b9e3d4e50b7d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8db549cc_2444f373",
+        "filename": "src/cli/CLISettingsProgram.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-23T23:03:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23b819c5_007c7ef4",
+      "range": {
+        "startLine": 21,
+        "startChar": 9,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "6abb12e02f782a581343cb7cd342b9e3d4e50b7d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
