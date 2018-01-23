@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a30d443f_b1ee27b4",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-23T19:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58b70171_eb85f7ac",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 107
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f2478f95_130e1954",
         "filename": "test/infrastructure/JsonSettingsStore.spec.js",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-16T16:26:23Z",
       "side": 1,
       "message": "Long line.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 119
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48809a62_708956ac",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-23T19:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2478f95_130e1954",
       "range": {
         "startLine": 54,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1b6f4d57_3c51c7e6",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-23T19:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "739073ad_678b0849",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 120
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "05196ee1_05069cf4",
         "filename": "test/infrastructure/JsonSettingsStore.spec.js",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-01-16T16:26:23Z",
       "side": 1,
       "message": "Long line.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 134
+      },
+      "revId": "7e7a38233fa8ae309b14026a748d2c4bcffa676b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01a0b8cd_a621c22c",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-23T19:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05196ee1_05069cf4",
       "range": {
         "startLine": 68,
         "startChar": 0,
