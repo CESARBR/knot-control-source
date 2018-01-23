@@ -22,6 +22,30 @@
       "revId": "ea2d0775c9a6b95dcc4b6d825601ca1788bbde95",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61d013e1_fc4c5649",
+        "filename": "test/interactors/GetCloudInteractor.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-23T18:35:27Z",
+      "side": 1,
+      "message": "Could be. I\u0027m augmenting this test suite, putting a method that ensures that it integrates well with the store (calls and returns the value).",
+      "parentUuid": "7ef9591c_4bcdcd82",
+      "range": {
+        "startLine": 20,
+        "startChar": 32,
+        "endLine": 20,
+        "endChar": 38
+      },
+      "revId": "ea2d0775c9a6b95dcc4b6d825601ca1788bbde95",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
