@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e32989eb_b52dc690",
+        "filename": "src/interactors/ConfigureCloudInteractor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-24T01:20:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ec5212f_db129a89",
+      "range": {
+        "startLine": 12,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 106
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "114757c8_76507735",
         "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-01-16T16:49:10Z",
       "side": 1,
       "message": "t.fail() ?",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 53
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2d4348b_19942cd8",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-24T01:20:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "114757c8_76507735",
       "range": {
         "startLine": 50,
         "startChar": 4,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "6f75d291_8b759d8e",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-24T01:20:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f153c0a_96e4eece",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 53
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "697cd5b0_ec7f533c",
         "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-01-16T16:49:10Z",
       "side": 1,
       "message": "t.fail() ?",
+      "range": {
+        "startLine": 70,
+        "startChar": 5,
+        "endLine": 70,
+        "endChar": 53
+      },
+      "revId": "bf8e1b4411851eccd5328c501b2c5892179104f9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57f1e0eb_ee94a90d",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-24T01:20:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "697cd5b0_ec7f533c",
       "range": {
         "startLine": 70,
         "startChar": 5,
