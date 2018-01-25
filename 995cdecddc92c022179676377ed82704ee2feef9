@@ -22,6 +22,30 @@
       "revId": "995cdecddc92c022179676377ed82704ee2feef9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2b6b59_23163557",
+        "filename": "src/cli/CLISettingsProgram.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-25T12:25:58Z",
+      "side": 1,
+      "message": "I just saw that the \u0027set cloud\u0027 commit fix it.",
+      "parentUuid": "6897863b_22d95652",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 103
+      },
+      "revId": "995cdecddc92c022179676377ed82704ee2feef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
