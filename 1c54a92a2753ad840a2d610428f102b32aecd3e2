@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "75ecb68f_bc01bb4d",
+        "filename": "test/services/ConfigureCloudRequestValidator.spec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-25T13:19:38Z",
+      "side": 1,
+      "message": "Ok, no problem. It\u0027s not a big thing.",
+      "parentUuid": "a6269b76_eb8f1fdc",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 103
+      },
+      "revId": "1c54a92a2753ad840a2d610428f102b32aecd3e2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66fd9034_d7b3b437",
         "filename": "test/services/SettingsService.spec.js",
         "patchSetId": 2
