@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6897863b_22d95652",
+        "filename": "src/cli/CLISettingsProgram.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1012786
+      },
+      "writtenOn": "2018-01-25T09:32:20Z",
+      "side": 1,
+      "message": "The code is cleaner now. Good job. \nJust fix the long line.",
+      "range": {
+        "startLine": 26,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 103
+      },
+      "revId": "995cdecddc92c022179676377ed82704ee2feef9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
