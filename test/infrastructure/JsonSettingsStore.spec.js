@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import JsonSettingsStore from 'infrastructure/JsonSettingsStore';
 import State from 'entities/State';
 import Address from 'entities/Address';
+import Credentials from 'entities/Credentials';
 
 const configDir = './data';
 const configFilePath = `${configDir}/config.json`;
@@ -16,6 +17,14 @@ const configDataWithStateCloud = {
   cloud: {
     hostname: 'localhost',
     port: 3000,
+  },
+};
+
+const configDataWithStateUser = {
+  state: State.READY.name,
+  user: {
+    uuid: 'aea3138d-a43e-45c6-9cd6-626c77790005',
+    token: '427eaeced6dca774e4c62409074a256f04701f8d',
   },
 };
 
@@ -116,6 +125,51 @@ createTest(configDataWithStateCloud)(
 
     const fileData = await fs.readJson(configFilePath);
     t.deepEqual(fileData.cloud, address);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'setUser() writes user object on the file',
+  async (t, settingsStore) => {
+    const credentials = new Credentials(
+      'aea3138d-a43e-45c6-9cd6-626c77790005',
+      '427eaeced6dca774e4c62409074a256f04701f8d',
+    );
+    await settingsStore.setUser(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.true(fileData.user);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'setUser() writes user object on the file with the credentials contents',
+  async (t, settingsStore) => {
+    const credentials = new Credentials(
+      'aea3138d-a43e-45c6-9cd6-626c77790005',
+      '427eaeced6dca774e4c62409074a256f04701f8d',
+    );
+    await settingsStore.setUser(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.user, credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateUser)(
+  'setUser() update user object if it exists',
+  async (t, settingsStore) => {
+    const credentials = new Credentials(
+      'e97f690b-3c3b-40e8-956d-584956580000',
+      '255a93fb56248669315d269a16c889ae2aa20ca2',
+    );
+    await settingsStore.setUser(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.user, credentials);
     t.end();
   },
 );

@@ -30,6 +30,12 @@ class JsonSettingsStore {
     settings.cloud = address;
     await this.saveSettings(settings);
   }
+
+  async setUser(credentials) {
+    const settings = await this.getSettings();
+    settings.user = credentials;
+    await this.saveSettings(settings);
+  }
 }
 
 export default JsonSettingsStore;
