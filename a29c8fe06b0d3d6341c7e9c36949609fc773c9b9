@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e598ae0e_a6615ba7",
+        "filename": "src/interactors/SetUserInteractor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2018-01-26T18:36:38Z",
+      "side": 1,
+      "message": "Line too long",
+      "revId": "a29c8fe06b0d3d6341c7e9c36949609fc773c9b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c243c0e0_8ebfd3a3",
+        "filename": "src/services/SetUserRequest.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2018-01-26T18:36:38Z",
+      "side": 1,
+      "message": "I think that we can just have `ConfigureCredentialRequest`. Because we can use it in gateway credentials too",
+      "revId": "a29c8fe06b0d3d6341c7e9c36949609fc773c9b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
