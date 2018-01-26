@@ -41,6 +41,12 @@ class CLISettingsProgram {
           'Sets the cloud configuration',
           {},
           createHandler(this.setCloud.bind(this)),
+        )
+        .command(
+          'user <uuid> <token>',
+          'Sets the user configuration',
+          {},
+          createHandler(this.setUser.bind(this)),
         ))
       .demandCommand()
       .strict()
@@ -63,6 +69,11 @@ class CLISettingsProgram {
 
   async setCloud(args) {
     await this.settingsApi.configureCloud(args.hostname, args.port);
+    console.log('Done');
+  }
+
+  async setUser(args) {
+    await this.settingsApi.setUser(args.uuid, args.token);
     console.log('Done');
   }
 }
