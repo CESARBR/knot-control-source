@@ -4,6 +4,7 @@ import sinon from 'sinon';
 import DBusSettingsAPI from 'daemon/DBusSettingsAPI';
 import Address from 'entities/Address';
 import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+import { SetUserRequest } from 'services//SetUserRequest';
 
 const test = around(tape)
   .before((t) => {
@@ -11,6 +12,7 @@ const test = around(tape)
       isReady: sinon.stub().resolves(true),
       getCloud: sinon.stub().resolves(new Address('localhost', 3000)),
       configureCloud: sinon.stub().resolves(),
+      setUser: sinon.stub().resolves(),
     };
     const dbusSettingsAPI = new DBusSettingsAPI(settingsService);
     t.next(dbusSettingsAPI);
@@ -68,6 +70,33 @@ test('configureCloud() pass request with received arguments', async (t, dbusSett
 
   const expectedRequest = new ConfigureCloudRequest('localhost', 3000);
   const actualRequest = dbusSettingsAPI.settingsService.configureCloud.getCall(0).args[0];
+  t.deepEqual(actualRequest, expectedRequest);
+  t.end();
+});
+
+test('setUser() calls SettingsService.setUser()', async (t, dbusSettingsAPI) => {
+  const credentials = {
+    uuid: 'aea3138d-a43e-45c6-9cd6-626c77790005',
+    token: '427eaeced6dca774e4c62409074a256f04701f8d',
+  };
+  await dbusSettingsAPI.setUser(credentials);
+
+  t.true(dbusSettingsAPI.settingsService.setUser.called);
+  t.end();
+});
+
+test('setUser() pass request with received arguments', async (t, dbusSettingsAPI) => {
+  const credentials = {
+    uuid: 'aea3138d-a43e-45c6-9cd6-626c77790005',
+    token: '427eaeced6dca774e4c62409074a256f04701f8d',
+  };
+  await dbusSettingsAPI.setUser(credentials);
+
+  const expectedRequest = new SetUserRequest(
+    'aea3138d-a43e-45c6-9cd6-626c77790005',
+    '427eaeced6dca774e4c62409074a256f04701f8d',
+  );
+  const actualRequest = dbusSettingsAPI.settingsService.setUser.getCall(0).args[0];
   t.deepEqual(actualRequest, expectedRequest);
   t.end();
 });

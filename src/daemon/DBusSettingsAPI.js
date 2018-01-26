@@ -1,4 +1,5 @@
 import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+import { SetUserRequest } from 'services//SetUserRequest';
 
 class DBusSettingsAPI {
   constructor(settingsService) {
@@ -17,6 +18,11 @@ class DBusSettingsAPI {
   async configureCloud(address) {
     const request = new ConfigureCloudRequest(address.hostname, address.port);
     await this.settingsService.configureCloud(request);
+  }
+
+  async setUser(credentials) {
+    const request = new SetUserRequest(credentials.uuid, credentials.token);
+    await this.settingsService.setUser(request);
   }
 }
 
