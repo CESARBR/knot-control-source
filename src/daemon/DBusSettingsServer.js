@@ -71,6 +71,14 @@ class DBusSettingsServer {
       this.settingsApi.configureCloud.bind(this.settingsApi),
     );
 
+    createProperty(
+      settingsInterface,
+      'User',
+      Object,
+      null,
+      this.settingsApi.setUser.bind(this.settingsApi),
+    );
+
     settingsInterface.update();
   }
 }
