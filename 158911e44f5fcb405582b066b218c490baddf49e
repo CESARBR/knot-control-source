@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d18d31f0_a0cefbdf",
+        "filename": "test/services/SettingsService.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T20:02:40Z",
+      "side": 1,
+      "message": "To create a pattern, let\u0027s put get before set like above.",
+      "revId": "158911e44f5fcb405582b066b218c490baddf49e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
