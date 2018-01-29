@@ -2,9 +2,16 @@ import { ConfigureCloudRequestValidator } from 'services/ConfigureCloudRequest';
 import { SetUserRequestValidator } from 'services/SetUserRequest';
 
 class SettingsService {
-  constructor(isReadyInteractor, getCloudInteractor, configureCloudInteractor, setUserInteractor) {
+  constructor(
+    isReadyInteractor,
+    getCloudInteractor,
+    getUserInteractor,
+    configureCloudInteractor,
+    setUserInteractor,
+  ) {
     this.isReadyInteractor = isReadyInteractor;
     this.getCloudInteractor = getCloudInteractor;
+    this.getUserInteractor = getUserInteractor;
     this.configureCloudInteractor = configureCloudInteractor;
     this.setUserInteractor = setUserInteractor;
   }
@@ -25,6 +32,10 @@ class SettingsService {
   async setUser(request) {
     SetUserRequestValidator.validate(request);
     await this.setUserInteractor.execute(request);
+  }
+
+  async getUser() {
+    return this.getUserInteractor.execute();
   }
 }
 
