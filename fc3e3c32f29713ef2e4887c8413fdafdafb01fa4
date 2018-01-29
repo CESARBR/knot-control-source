@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a14425dd_f039f2bb",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T18:19:10Z",
+      "side": 1,
+      "message": "change/changing",
+      "revId": "fc3e3c32f29713ef2e4887c8413fdafdafb01fa4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64ec2551_f36628d3",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T18:19:10Z",
+      "side": 1,
+      "message": "remove this assert.",
+      "revId": "fc3e3c32f29713ef2e4887c8413fdafdafb01fa4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "86217c46_c0928dde",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T18:19:10Z",
+      "side": 1,
+      "message": "s/change/changing",
+      "revId": "fc3e3c32f29713ef2e4887c8413fdafdafb01fa4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f64e22af_4426b400",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T18:19:10Z",
+      "side": 1,
+      "message": "Remove this assert, it is already being verified in the test above and it is not the focus of this test.",
+      "revId": "fc3e3c32f29713ef2e4887c8413fdafdafb01fa4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
