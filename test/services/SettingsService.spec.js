@@ -19,6 +19,9 @@ const test = around(tape)
       execute: sinon.stub().resolves(),
     };
     const setUserInteractor = {
+      execute: sinon.stub().resolves(),
+    };
+    const getUserInteractor = {
       execute: sinon.stub().resolves(new Credentials(
         'aea3138d-a43e-45c6-9cd6-626c77790005',
         '427eaeced6dca774e4c62409074a256f04701f8d',
@@ -29,6 +32,7 @@ const test = around(tape)
       getCloudInteractor,
       configureCloudInteractor,
       setUserInteractor,
+      getUserInteractor,
     );
     t.next(settingsService);
   });
@@ -125,5 +129,23 @@ test('setUser() validates request', async (t, settingsService) => {
   } catch (e) {
     t.pass('should throw');
   }
+  t.end();
+});
+
+test('getUser() calls GetUserInteractor.execute()', async (t, settingsService) => {
+  await settingsService.getUser();
+
+  t.true(settingsService.getUserInteractor.execute.called);
+  t.end();
+});
+
+test('getUser() returns Credentials returned by GetUserInteractor', async (t, settingsService) => {
+  const expectedCredentials = new Credentials(
+    'aea3138d-a43e-45c6-9cd6-626c77790005',
+    '427eaeced6dca774e4c62409074a256f04701f8d',
+  );
+  const actualCredentials = await settingsService.getUser();
+
+  t.deepEqual(actualCredentials, expectedCredentials);
   t.end();
 });
