@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84efa584_8d65b355",
+        "filename": "src/interactors/SetUserInteractor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T17:36:46Z",
+      "side": 1,
+      "message": "Instead of breaking the string, put each parameter in a new line:\n\nthrow new ...(\n  currentState,\n  `Can\u0027t ...`,\n);",
+      "revId": "f2ad594d4e422f0d4902476e29aed0a1b42d6c37",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
