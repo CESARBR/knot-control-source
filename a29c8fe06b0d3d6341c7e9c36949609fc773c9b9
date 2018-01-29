@@ -54,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "4d2a9316_2baacec7",
+        "filename": "src/services/SetUserRequest.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T14:40:59Z",
+      "side": 1,
+      "message": "I just remembered that Joi provides the uuid validator. Use it here instead. It is string().uuid().",
+      "revId": "a29c8fe06b0d3d6341c7e9c36949609fc773c9b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c76c23bc_803b5bbc",
         "filename": "test/services/SetUserRequestValidator.spec.js",
         "patchSetId": 1
