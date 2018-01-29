@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1b4653ee_dee42746",
+        "filename": "src/services/SettingsService.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T20:12:03Z",
+      "side": 1,
+      "message": "You need to change here as well.",
+      "revId": "816421df5fe9ea29f858f9f6e1b18c72e2e3d0cb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
