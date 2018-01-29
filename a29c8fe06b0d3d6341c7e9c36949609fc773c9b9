@@ -33,6 +33,41 @@
       "revId": "a29c8fe06b0d3d6341c7e9c36949609fc773c9b9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef66add8_af5080a2",
+        "filename": "src/services/SetUserRequest.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T13:56:58Z",
+      "side": 1,
+      "message": "Hum, I\u0027m not sure about this. On one side it makes sense because it is the same data, but on the other side it means two different things, the user and the gateway. \n\nLet\u0027s use two requests for now and reevaluate later if we aren\u0027t just repeating code. About the name, let\u0027s use `Set*`, I chose Configure because initially it would do more than just set the property. I\u0027ll change it later on the Cloud side.",
+      "parentUuid": "c243c0e0_8ebfd3a3",
+      "revId": "a29c8fe06b0d3d6341c7e9c36949609fc773c9b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c76c23bc_803b5bbc",
+        "filename": "test/services/SetUserRequestValidator.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-29T13:56:58Z",
+      "side": 1,
+      "message": "What defines that this token is invalid? Put the reason in the test name, like:\n\n\"throws if token is invalid (reason)\"",
+      "revId": "a29c8fe06b0d3d6341c7e9c36949609fc773c9b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
