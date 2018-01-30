@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import State from 'entities/State';
 import Address from 'entities/Address';
+import Credentials from 'entities/Credentials';
 
 class JsonSettingsStore {
   constructor(fileName) {
@@ -23,6 +24,11 @@ class JsonSettingsStore {
   async getCloud() {
     const settings = await this.getSettings();
     return settings.cloud ? new Address(settings.cloud.hostname, settings.cloud.port) : null;
+  }
+
+  async getUser() {
+    const settings = await this.getSettings();
+    return settings.user ? new Credentials(settings.user.uuid, settings.user.token) : null;
   }
 
   async setCloud(address) {

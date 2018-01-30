@@ -93,6 +93,40 @@ createTest(configDataWithState)(
   },
 );
 
+createTest(configDataWithStateUser)(
+  'getUser() returns user configuration as Credentials',
+  async (t, settingsStore) => {
+    const user = await settingsStore.getUser();
+
+    t.true(user instanceof Credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateUser)(
+  'getUser() returns the user configuration from the file',
+  async (t, settingsStore) => {
+    const user = await settingsStore.getUser();
+    const credentials = new Credentials(
+      'aea3138d-a43e-45c6-9cd6-626c77790005',
+      '427eaeced6dca774e4c62409074a256f04701f8d',
+    );
+
+    t.deepEqual(user, credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'getUser() returns null if the file doesn\'t contain the user object',
+  async (t, settingsStore) => {
+    const user = await settingsStore.getUser();
+
+    t.equal(user, null);
+    t.end();
+  },
+);
+
 createTest(configDataWithState)(
   'setCloud() writes cloud object on the file',
   async (t, settingsStore) => {
@@ -193,7 +227,6 @@ createTest(configDataWithStateUser)(
 createTest(configDataWithStateCloud)(
   'setUser() writes user object without changing the cloud credentials',
   async (t, settingsStore) => {
-    const address = new Address('localhost', 3000);
     const credentials = new Credentials(
       'aea3138d-a43e-45c6-9cd6-626c77790005',
       '427eaeced6dca774e4c62409074a256f04701f8d',
