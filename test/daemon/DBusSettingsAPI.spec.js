@@ -5,12 +5,17 @@ import DBusSettingsAPI from 'daemon/DBusSettingsAPI';
 import Address from 'entities/Address';
 import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
 import { SetUserRequest } from 'services//SetUserRequest';
+import Credentials from 'entities/Credentials';
 
 const test = around(tape)
   .before((t) => {
     const settingsService = {
       isReady: sinon.stub().resolves(true),
       getCloud: sinon.stub().resolves(new Address('localhost', 3000)),
+      getUser: sinon.stub().resolves(new Credentials(
+        'aea3138d-a43e-45c6-9cd6-626c77790005',
+        '427eaeced6dca774e4c62409074a256f04701f8d',
+      )),
       configureCloud: sinon.stub().resolves(),
       setUser: sinon.stub().resolves(),
     };
@@ -47,6 +52,24 @@ test('getCloud() returns Address returned by SettingsService', async (t, dbusSet
   const actualAddress = await dbusSettingsAPI.getCloud();
 
   t.deepEquals(actualAddress, expectedAddress);
+  t.end();
+});
+
+test('getUser() calls SettingsService.getUser()', async (t, dbusSettingsAPI) => {
+  await dbusSettingsAPI.getUser();
+
+  t.true(dbusSettingsAPI.settingsService.getUser.called);
+  t.end();
+});
+
+test('getUser() returns Credentials returned by SettingsService', async (t, dbusSettingsAPI) => {
+  const expectedCredentials = new Credentials(
+    'aea3138d-a43e-45c6-9cd6-626c77790005',
+    '427eaeced6dca774e4c62409074a256f04701f8d',
+  );
+  const actualCredentials = await dbusSettingsAPI.getUser();
+
+  t.deepEquals(actualCredentials, expectedCredentials);
   t.end();
 });
 

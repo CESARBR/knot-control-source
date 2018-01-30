@@ -75,7 +75,7 @@ class DBusSettingsServer {
       settingsInterface,
       'User',
       Object,
-      null,
+      this.settingsApi.getUser.bind(this.settingsApi),
       this.settingsApi.setUser.bind(this.settingsApi),
     );
 
