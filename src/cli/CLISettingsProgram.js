@@ -34,6 +34,12 @@ class CLISettingsProgram {
           'Gets the cloud configuration',
           {},
           createHandler(this.getCloud.bind(this)),
+        )
+        .command(
+          'user',
+          'Gets the user configuration',
+          {},
+          createHandler(this.getUser.bind(this)),
         ))
       .command('set <property>', 'Sets the property value', _yargs => _yargs
         .command(
@@ -62,6 +68,15 @@ class CLISettingsProgram {
     const configuration = await this.settingsApi.getCloud();
     if (configuration) {
       console.log(`${configuration.hostname}:${configuration.port}`);
+    } else {
+      console.log('Not configured');
+    }
+  }
+
+  async getUser() {
+    const configuration = await this.settingsApi.getUser();
+    if (configuration) {
+      console.log(`UUID: ${configuration.uuid}\nToken: ${configuration.token}`);
     } else {
       console.log('Not configured');
     }
