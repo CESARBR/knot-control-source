@@ -15,6 +15,11 @@ class DBusSettingsAPI {
     return configuration || {};
   }
 
+  async getUser() {
+    const configuration = await this.settingsService.getUser();
+    return configuration || {};
+  }
+
   async configureCloud(address) {
     const request = new ConfigureCloudRequest(address.hostname, address.port);
     await this.settingsService.configureCloud(request);
