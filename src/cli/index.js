@@ -1,6 +1,7 @@
 // Domain
 import IsReadyInteractor from 'interactors/IsReadyInteractor';
 import GetCloudInteractor from 'interactors/GetCloudInteractor';
+import GetUserInteractor from 'interactors/GetUserInteractor';
 import ConfigureCloudInteractor from 'interactors/ConfigureCloudInteractor';
 import SetUserInteractor from 'interactors/SetUserInteractor';
 import SettingsService from 'services/SettingsService';
@@ -17,11 +18,13 @@ const settingsStore = new JsonSettingsStore(SETTINGS_FILE);
 const settingsStoreInitializer = new JsonSettingsStoreInitializer(SETTINGS_FILE);
 const isReadyInteractor = new IsReadyInteractor(settingsStore);
 const getCloudInteractor = new GetCloudInteractor(settingsStore);
+const getUserInteractor = new GetUserInteractor(settingsStore);
 const configureCloudInteractor = new ConfigureCloudInteractor(settingsStore);
 const setUserInteractor = new SetUserInteractor(settingsStore);
 const settingsService = new SettingsService(
   isReadyInteractor,
   getCloudInteractor,
+  getUserInteractor,
   configureCloudInteractor,
   setUserInteractor,
 );
