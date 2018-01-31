@@ -4,7 +4,8 @@ import sinon from 'sinon';
 import CLISettingsAPI from 'cli/CLISettingsAPI';
 import Address from 'entities/Address';
 import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
-import { SetUserRequest } from 'services//SetUserRequest';
+import { SetUserRequest } from 'services/SetUserRequest';
+import { SetGatewayRequest } from 'services/SetGatewayRequest';
 import Credentials from 'entities/Credentials';
 
 const test = around(tape)
@@ -18,6 +19,7 @@ const test = around(tape)
       )),
       configureCloud: sinon.stub().resolves(),
       setUser: sinon.stub().resolves(),
+      setGateway: sinon.stub().resolves(),
     };
     const cliSettingsAPI = new CLISettingsAPI(settingsService);
     t.next(cliSettingsAPI);
@@ -111,6 +113,31 @@ test('setUser() pass request with the arguments received', async (t, cliSettings
     '427eaeced6dca774e4c62409074a256f04701f8d',
   );
   const actualRequest = cliSettingsAPI.settingsService.setUser.getCall(0).args[0];
+  t.deepEqual(actualRequest, expectedRequest);
+  t.end();
+});
+
+test('setGateway() calls SettingsService.setGateway()', async (t, cliSettingsAPI) => {
+  await cliSettingsAPI.setGateway(
+    'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+    '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+  );
+
+  t.true(cliSettingsAPI.settingsService.setGateway.called);
+  t.end();
+});
+
+test('setGateway() pass request with the arguments received', async (t, cliSettingsAPI) => {
+  await cliSettingsAPI.setGateway(
+    'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+    '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+  );
+
+  const expectedRequest = new SetGatewayRequest(
+    'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+    '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+  );
+  const actualRequest = cliSettingsAPI.settingsService.setGateway.getCall(0).args[0];
   t.deepEqual(actualRequest, expectedRequest);
   t.end();
 });
