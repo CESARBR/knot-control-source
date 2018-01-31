@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7e6a106_bbf98546",
+        "filename": "test/infrastructure/JsonSettingsStore.spec.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-01-31T19:41:10Z",
+      "side": 1,
+      "message": "updates gateway object",
+      "revId": "a4ce21b38fffdf5dfcb7364f91cc80ae3541d292",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
