@@ -28,6 +28,14 @@ const configDataWithStateUser = {
   },
 };
 
+const configDataWithStateGateway = {
+  state: State.READY.name,
+  gateway: {
+    uuid: 'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+    token: '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+  },
+};
+
 function createTest(data) {
   return around(tape)
     .before((t) => {
@@ -179,6 +187,22 @@ createTest(configDataWithStateUser)(
   },
 );
 
+createTest(configDataWithStateGateway)(
+  'setCloud() writes cloud object without changing the gateway credentials',
+  async (t, settingsStore) => {
+    const address = new Address('localhost', 3000);
+    const credentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsStore.setCloud(address);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.gateway, credentials);
+    t.end();
+  },
+);
+
 createTest(configDataWithState)(
   'setUser() writes user object on the file',
   async (t, settingsStore) => {
@@ -235,6 +259,105 @@ createTest(configDataWithStateCloud)(
 
     const fileData = await fs.readJson(configFilePath);
     t.deepEqual(fileData.user, credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateGateway)(
+  'setUser() writes user object without changing the gateway credentials',
+  async (t, settingsStore) => {
+    const userCredentials = new Credentials(
+      'aea3138d-a43e-45c6-9cd6-626c77790005',
+      '427eaeced6dca774e4c62409074a256f04701f8d',
+    );
+    const gatewayCredentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsStore.setUser(userCredentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.gateway, gatewayCredentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'setGateway() writes gateway object on the file',
+  async (t, settingsStore) => {
+    const credentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsStore.setGateway(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.true(fileData.gateway);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'setGateway() writes gateway object on the file with the credentials contents',
+  async (t, settingsStore) => {
+    const credentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsStore.setGateway(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.gateway, credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateGateway)(
+  'setGateway() update user object if it exists',
+  async (t, settingsStore) => {
+    const credentials = new Credentials(
+      'e97f690b-3c3b-40e8-956d-584956580000',
+      '255a93fb56248669315d269a16c889ae2aa20ca2',
+    );
+    await settingsStore.setGateway(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.gateway, credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateCloud)(
+  'setGateway() writes gateway object without changing the cloud address',
+  async (t, settingsStore) => {
+    const address = new Address('localhost', 3000);
+    const credentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsStore.setGateway(credentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.cloud, address);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateUser)(
+  'setGateway() writes gateway object without changing the user credentials',
+  async (t, settingsStore) => {
+    const userCredentials = new Credentials(
+      'aea3138d-a43e-45c6-9cd6-626c77790005',
+      '427eaeced6dca774e4c62409074a256f04701f8d',
+    );
+    const gatewayCredentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsStore.setGateway(gatewayCredentials);
+
+    const fileData = await fs.readJson(configFilePath);
+    t.deepEqual(fileData.user, userCredentials);
     t.end();
   },
 );
