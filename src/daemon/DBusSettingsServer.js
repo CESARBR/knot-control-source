@@ -79,6 +79,14 @@ class DBusSettingsServer {
       this.settingsApi.setUser.bind(this.settingsApi),
     );
 
+    createProperty(
+      settingsInterface,
+      'Gateway',
+      Object,
+      null,
+      this.settingsApi.setGateway.bind(this.settingsApi),
+    );
+
     settingsInterface.update();
   }
 }
