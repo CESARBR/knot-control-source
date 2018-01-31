@@ -4,6 +4,7 @@ import GetCloudInteractor from 'interactors/GetCloudInteractor';
 import GetUserInteractor from 'interactors/GetUserInteractor';
 import ConfigureCloudInteractor from 'interactors/ConfigureCloudInteractor';
 import SetUserInteractor from 'interactors/SetUserInteractor';
+import SetGatewayInteractor from 'interactors/SetGatewayInteractor';
 import SettingsService from 'services/SettingsService';
 
 // Infrastructure
@@ -21,12 +22,14 @@ const getCloudInteractor = new GetCloudInteractor(settingsStore);
 const getUserInteractor = new GetUserInteractor(settingsStore);
 const configureCloudInteractor = new ConfigureCloudInteractor(settingsStore);
 const setUserInteractor = new SetUserInteractor(settingsStore);
+const setGatewayInteractor = new SetGatewayInteractor(settingsStore);
 const settingsService = new SettingsService(
   isReadyInteractor,
   getCloudInteractor,
   getUserInteractor,
   configureCloudInteractor,
   setUserInteractor,
+  setGatewayInteractor,
 );
 const dbusSettingsAPI = new DBusSettingsAPI(settingsService);
 const dbusSettingsServer = new DBusSettingsServer(dbusSettingsAPI);
