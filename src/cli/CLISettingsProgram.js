@@ -53,6 +53,12 @@ class CLISettingsProgram {
           'Sets the user configuration',
           {},
           createHandler(this.setUser.bind(this)),
+        )
+        .command(
+          'gateway <uuid> <token>',
+          'Sets the gateway configuration',
+          {},
+          createHandler(this.setGateway.bind(this)),
         ))
       .demandCommand()
       .strict()
@@ -89,6 +95,11 @@ class CLISettingsProgram {
 
   async setUser(args) {
     await this.settingsApi.setUser(args.uuid, args.token);
+    console.log('Done');
+  }
+
+  async setGateway(args) {
+    await this.settingsApi.setGateway(args.uuid, args.token);
     console.log('Done');
   }
 }
