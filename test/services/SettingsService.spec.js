@@ -6,6 +6,7 @@ import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
 import Address from 'entities/Address';
 import Credentials from 'entities/Credentials';
 import { SetUserRequest } from 'services/SetUserRequest';
+import { SetGatewayRequest } from 'services/SetGatewayRequest';
 
 const test = around(tape)
   .before((t) => {
@@ -15,17 +16,20 @@ const test = around(tape)
     const getCloudInteractor = {
       execute: sinon.stub().resolves(new Address('localhost', 3000)),
     };
+    const getUserInteractor = {
+      execute: sinon.stub().resolves(new Credentials(
+        'aea3138d-a43e-45c6-9cd6-626c77790005',
+        '427eaeced6dca774e4c62409074a256f04701f8d',
+      )),
+    };
     const configureCloudInteractor = {
       execute: sinon.stub().resolves(),
     };
     const setUserInteractor = {
       execute: sinon.stub().resolves(),
     };
-    const getUserInteractor = {
-      execute: sinon.stub().resolves(new Credentials(
-        'aea3138d-a43e-45c6-9cd6-626c77790005',
-        '427eaeced6dca774e4c62409074a256f04701f8d',
-      )),
+    const setGatewayInteractor = {
+      execute: sinon.stub().resolves(),
     };
     const settingsService = new SettingsService(
       isReadyInteractor,
@@ -33,6 +37,7 @@ const test = around(tape)
       getUserInteractor,
       configureCloudInteractor,
       setUserInteractor,
+      setGatewayInteractor,
     );
     t.next(settingsService);
   });
@@ -147,5 +152,41 @@ test('getUser() returns Credentials returned by GetUserInteractor', async (t, se
   const actualCredentials = await settingsService.getUser();
 
   t.deepEqual(actualCredentials, expectedCredentials);
+  t.end();
+});
+
+test('setGateway() calls SetGatewayInteractor.execute()', async (t, settingsService) => {
+  const request = new SetGatewayRequest(
+    'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+    '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+  );
+  await settingsService.setGateway(request);
+
+  t.true(settingsService.setGatewayInteractor.execute.called);
+  t.end();
+});
+
+test(
+  'setGateway() calls SetGatewayInteractor.execute() with request',
+  async (t, settingsService) => {
+    const request = new SetGatewayRequest(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    await settingsService.setGateway(request);
+
+    const actualRequest = settingsService.setGatewayInteractor.execute.getCall(0).args[0];
+    t.deepEqual(actualRequest, request);
+    t.end();
+  },
+);
+
+test('setGateway() validates request', async (t, settingsService) => {
+  try {
+    await settingsService.setGateway();
+    t.fail('should throw');
+  } catch (e) {
+    t.pass('should throw');
+  }
   t.end();
 });

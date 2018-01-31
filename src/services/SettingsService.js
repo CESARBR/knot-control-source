@@ -1,5 +1,6 @@
 import { ConfigureCloudRequestValidator } from 'services/ConfigureCloudRequest';
 import { SetUserRequestValidator } from 'services/SetUserRequest';
+import { SetGatewayRequestValidator } from 'services/SetGatewayRequest';
 
 class SettingsService {
   constructor(
@@ -8,12 +9,14 @@ class SettingsService {
     getUserInteractor,
     configureCloudInteractor,
     setUserInteractor,
+    setGatewayInteractor,
   ) {
     this.isReadyInteractor = isReadyInteractor;
     this.getCloudInteractor = getCloudInteractor;
     this.getUserInteractor = getUserInteractor;
     this.configureCloudInteractor = configureCloudInteractor;
     this.setUserInteractor = setUserInteractor;
+    this.setGatewayInteractor = setGatewayInteractor;
   }
 
   async isReady() {
@@ -36,6 +39,11 @@ class SettingsService {
 
   async getUser() {
     return this.getUserInteractor.execute();
+  }
+
+  async setGateway(request) {
+    SetGatewayRequestValidator.validate(request);
+    await this.setGatewayInteractor.execute(request);
   }
 }
 
