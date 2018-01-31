@@ -42,6 +42,12 @@ class JsonSettingsStore {
     settings.user = credentials;
     await this.saveSettings(settings);
   }
+
+  async setGateway(credentials) {
+    const settings = await this.getSettings();
+    settings.gateway = credentials;
+    await this.saveSettings(settings);
+  }
 }
 
 export default JsonSettingsStore;
