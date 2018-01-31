@@ -1,5 +1,6 @@
 import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
-import { SetUserRequest } from 'services//SetUserRequest';
+import { SetUserRequest } from 'services/SetUserRequest';
+import { SetGatewayRequest } from 'services/SetGatewayRequest';
 
 class DBusSettingsAPI {
   constructor(settingsService) {
@@ -28,6 +29,11 @@ class DBusSettingsAPI {
   async setUser(credentials) {
     const request = new SetUserRequest(credentials.uuid, credentials.token);
     await this.settingsService.setUser(request);
+  }
+
+  async setGateway(credentials) {
+    const request = new SetGatewayRequest(credentials.uuid, credentials.token);
+    await this.settingsService.setGateway(request);
   }
 }
 
