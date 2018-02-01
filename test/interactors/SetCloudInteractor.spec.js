@@ -1,7 +1,7 @@
 import tape from 'tape';
 import around from 'tape-around';
 import sinon from 'sinon';
-import ConfigureCloudInteractor from 'interactors/ConfigureCloudInteractor';
+import SetCloudInteractor from 'interactors/SetCloudInteractor';
 import State from 'entities/State';
 import Address from 'entities/Address';
 import InvalidStateError from 'entities/InvalidStateError';
@@ -16,7 +16,7 @@ const test = around(tape)
   });
 
 test('calls setCloud() on store', async (t, settingsStore) => {
-  const interactor = new ConfigureCloudInteractor(settingsStore);
+  const interactor = new SetCloudInteractor(settingsStore);
   const cloudAddress = new Address('localhost', 3000);
 
   await interactor.execute(cloudAddress);
@@ -26,7 +26,7 @@ test('calls setCloud() on store', async (t, settingsStore) => {
 });
 
 test('calls setCloud() on store with new address', async (t, settingsStore) => {
-  const interactor = new ConfigureCloudInteractor(settingsStore);
+  const interactor = new SetCloudInteractor(settingsStore);
   const cloudAddress = new Address('localhost', 3000);
 
   await interactor.execute(cloudAddress);
@@ -38,7 +38,7 @@ test('calls setCloud() on store with new address', async (t, settingsStore) => {
 
 test('throws InvalidStateError when state is READY', async (t, settingsStore) => {
   settingsStore.getState.resolves(State.READY);
-  const interactor = new ConfigureCloudInteractor(settingsStore);
+  const interactor = new SetCloudInteractor(settingsStore);
   const cloudAddress = new Address('localhost', 3000);
 
   try {

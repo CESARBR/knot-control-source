@@ -1,4 +1,4 @@
-import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+import { SetCloudRequest } from 'services/SetCloudRequest';
 import { SetUserRequest } from 'services/SetUserRequest';
 import { SetGatewayRequest } from 'services/SetGatewayRequest';
 
@@ -21,9 +21,9 @@ class DBusSettingsAPI {
     return configuration || {};
   }
 
-  async configureCloud(address) {
-    const request = new ConfigureCloudRequest(address.hostname, address.port);
-    await this.settingsService.configureCloud(request);
+  async setCloud(address) {
+    const request = new SetCloudRequest(address.hostname, address.port);
+    await this.settingsService.setCloud(request);
   }
 
   async setUser(credentials) {

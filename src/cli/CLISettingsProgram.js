@@ -89,7 +89,7 @@ class CLISettingsProgram {
   }
 
   async setCloud(args) {
-    await this.settingsApi.configureCloud(args.hostname, args.port);
+    await this.settingsApi.setCloud(args.hostname, args.port);
     console.log('Done');
   }
 

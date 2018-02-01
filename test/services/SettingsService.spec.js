@@ -2,7 +2,7 @@ import tape from 'tape';
 import around from 'tape-around';
 import sinon from 'sinon';
 import SettingsService from 'services/SettingsService';
-import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+import { SetCloudRequest } from 'services/SetCloudRequest';
 import Address from 'entities/Address';
 import Credentials from 'entities/Credentials';
 import { SetUserRequest } from 'services/SetUserRequest';
@@ -22,7 +22,7 @@ const test = around(tape)
         '427eaeced6dca774e4c62409074a256f04701f8d',
       )),
     };
-    const configureCloudInteractor = {
+    const setCloudInteractor = {
       execute: sinon.stub().resolves(),
     };
     const setUserInteractor = {
@@ -35,7 +35,7 @@ const test = around(tape)
       isReadyInteractor,
       getCloudInteractor,
       getUserInteractor,
-      configureCloudInteractor,
+      setCloudInteractor,
       setUserInteractor,
       setGatewayInteractor,
     );
@@ -74,29 +74,29 @@ test('getCloud() returns Address returned by GetCloudInteractor', async (t, sett
   t.end();
 });
 
-test('configureCloud() calls ConfigureCloudInteractor.execute()', async (t, settingsService) => {
-  const request = new ConfigureCloudRequest('localhost', 3000);
-  await settingsService.configureCloud(request);
+test('setCloud() calls SetCloudInteractor.execute()', async (t, settingsService) => {
+  const request = new SetCloudRequest('localhost', 3000);
+  await settingsService.setCloud(request);
 
-  t.true(settingsService.configureCloudInteractor.execute.called);
+  t.true(settingsService.setCloudInteractor.execute.called);
   t.end();
 });
 
 test(
-  'configureCloud() calls ConfigureCloudInteractor.execute() with request',
+  'setCloud() calls SetCloudInteractor.execute() with request',
   async (t, settingsService) => {
-    const request = new ConfigureCloudRequest('localhost', 3000);
-    await settingsService.configureCloud(request);
+    const request = new SetCloudRequest('localhost', 3000);
+    await settingsService.setCloud(request);
 
-    const actualRequest = settingsService.configureCloudInteractor.execute.getCall(0).args[0];
+    const actualRequest = settingsService.setCloudInteractor.execute.getCall(0).args[0];
     t.deepEqual(actualRequest, request);
     t.end();
   },
 );
 
-test('configureCloud() validates request', async (t, settingsService) => {
+test('setCloud() validates request', async (t, settingsService) => {
   try {
-    await settingsService.configureCloud();
+    await settingsService.setCloud();
     t.fail('should throw');
   } catch (e) {
     t.pass('should throw');
