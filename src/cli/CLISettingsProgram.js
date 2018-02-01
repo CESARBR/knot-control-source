@@ -40,6 +40,12 @@ class CLISettingsProgram {
           'Gets the user configuration',
           {},
           createHandler(this.getUser.bind(this)),
+        )
+        .command(
+          'gateway',
+          'Gets the gateway configuration',
+          {},
+          createHandler(this.getGateway.bind(this)),
         ))
       .command('set <property>', 'Sets the property value', _yargs => _yargs
         .command(
@@ -81,6 +87,15 @@ class CLISettingsProgram {
 
   async getUser() {
     const configuration = await this.settingsApi.getUser();
+    if (configuration) {
+      console.log(`UUID: ${configuration.uuid}\nToken: ${configuration.token}`);
+    } else {
+      console.log('Not configured');
+    }
+  }
+
+  async getGateway() {
+    const configuration = await this.settingsApi.getGateway();
     if (configuration) {
       console.log(`UUID: ${configuration.uuid}\nToken: ${configuration.token}`);
     } else {
