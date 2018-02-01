@@ -22,6 +22,12 @@ const test = around(tape)
         '427eaeced6dca774e4c62409074a256f04701f8d',
       )),
     };
+    const getGatewayInteractor = {
+      execute: sinon.stub().resolves(new Credentials(
+        'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+        '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+      )),
+    };
     const configureCloudInteractor = {
       execute: sinon.stub().resolves(),
     };
@@ -35,6 +41,7 @@ const test = around(tape)
       isReadyInteractor,
       getCloudInteractor,
       getUserInteractor,
+      getGatewayInteractor,
       configureCloudInteractor,
       setUserInteractor,
       setGatewayInteractor,
@@ -190,3 +197,24 @@ test('setGateway() validates request', async (t, settingsService) => {
   }
   t.end();
 });
+
+test('getGateway() calls GetGatewayInteractor.execute()', async (t, settingsService) => {
+  await settingsService.getGateway();
+
+  t.true(settingsService.getGatewayInteractor.execute.called);
+  t.end();
+});
+
+test(
+  'getGateway() returns the Credentials returned by GetGatewayInteractor',
+  async (t, settingsService) => {
+    const expectedCredentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+    const actualCredentials = await settingsService.getGateway();
+
+    t.deepEqual(actualCredentials, expectedCredentials);
+    t.end();
+  },
+);

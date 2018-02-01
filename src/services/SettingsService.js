@@ -7,6 +7,7 @@ class SettingsService {
     isReadyInteractor,
     getCloudInteractor,
     getUserInteractor,
+    getGatewayInteractor,
     configureCloudInteractor,
     setUserInteractor,
     setGatewayInteractor,
@@ -14,6 +15,7 @@ class SettingsService {
     this.isReadyInteractor = isReadyInteractor;
     this.getCloudInteractor = getCloudInteractor;
     this.getUserInteractor = getUserInteractor;
+    this.getGatewayInteractor = getGatewayInteractor;
     this.configureCloudInteractor = configureCloudInteractor;
     this.setUserInteractor = setUserInteractor;
     this.setGatewayInteractor = setGatewayInteractor;
@@ -44,6 +46,10 @@ class SettingsService {
   async setGateway(request) {
     SetGatewayRequestValidator.validate(request);
     await this.setGatewayInteractor.execute(request);
+  }
+
+  async getGateway() {
+    return this.getGatewayInteractor.execute();
   }
 }
 
