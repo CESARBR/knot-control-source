@@ -135,6 +135,40 @@ createTest(configDataWithState)(
   },
 );
 
+createTest(configDataWithStateGateway)(
+  'getGateway() returns gateway configuration as Credentials',
+  async (t, settingsStore) => {
+    const gateway = await settingsStore.getGateway();
+
+    t.true(gateway instanceof Credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithStateGateway)(
+  'getGateway() returns the gateway configuration from the file',
+  async (t, settingsStore) => {
+    const gateway = await settingsStore.getGateway();
+    const credentials = new Credentials(
+      'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+      '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+    );
+
+    t.deepEqual(gateway, credentials);
+    t.end();
+  },
+);
+
+createTest(configDataWithState)(
+  'getGateway() returns null if the file doesn\'t contain the gateway object',
+  async (t, settingsStore) => {
+    const gateway = await settingsStore.getGateway();
+
+    t.equal(gateway, null);
+    t.end();
+  },
+);
+
 createTest(configDataWithState)(
   'setCloud() writes cloud object on the file',
   async (t, settingsStore) => {
