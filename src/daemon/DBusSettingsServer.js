@@ -83,7 +83,7 @@ class DBusSettingsServer {
       settingsInterface,
       'Gateway',
       Object,
-      null,
+      this.settingsApi.getGateway.bind(this.settingsApi),
       this.settingsApi.setGateway.bind(this.settingsApi),
     );
 
