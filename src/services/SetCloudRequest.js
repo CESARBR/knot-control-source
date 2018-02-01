@@ -1,13 +1,13 @@
 import joi from 'joi';
 
-class ConfigureCloudRequest {
+class SetCloudRequest {
   constructor(hostname, port) {
     this.hostname = hostname;
     this.port = port;
   }
 }
 
-const configureCloudRequestSchema = joi
+const setCloudRequestSchema = joi
   .object()
   .keys({
     hostname: joi
@@ -21,10 +21,10 @@ const configureCloudRequestSchema = joi
   })
   .required();
 
-class ConfigureCloudRequestValidator {
-  static validate(configureCloudRequest) {
-    joi.assert(configureCloudRequest, configureCloudRequestSchema);
+class SetCloudRequestValidator {
+  static validate(setCloudRequest) {
+    joi.assert(setCloudRequest, setCloudRequestSchema);
   }
 }
 
-export { ConfigureCloudRequest, ConfigureCloudRequestValidator };
+export { SetCloudRequest, SetCloudRequestValidator };

@@ -1,4 +1,4 @@
-import { ConfigureCloudRequestValidator } from 'services/ConfigureCloudRequest';
+import { SetCloudRequestValidator } from 'services/SetCloudRequest';
 import { SetUserRequestValidator } from 'services/SetUserRequest';
 import { SetGatewayRequestValidator } from 'services/SetGatewayRequest';
 
@@ -8,7 +8,7 @@ class SettingsService {
     getCloudInteractor,
     getUserInteractor,
     getGatewayInteractor,
-    configureCloudInteractor,
+    setCloudInteractor,
     setUserInteractor,
     setGatewayInteractor,
   ) {
@@ -16,7 +16,7 @@ class SettingsService {
     this.getCloudInteractor = getCloudInteractor;
     this.getUserInteractor = getUserInteractor;
     this.getGatewayInteractor = getGatewayInteractor;
-    this.configureCloudInteractor = configureCloudInteractor;
+    this.setCloudInteractor = setCloudInteractor;
     this.setUserInteractor = setUserInteractor;
     this.setGatewayInteractor = setGatewayInteractor;
   }
@@ -29,9 +29,9 @@ class SettingsService {
     return this.getCloudInteractor.execute();
   }
 
-  async configureCloud(request) {
-    ConfigureCloudRequestValidator.validate(request);
-    await this.configureCloudInteractor.execute(request);
+  async setCloud(request) {
+    SetCloudRequestValidator.validate(request);
+    await this.setCloudInteractor.execute(request);
   }
 
   async setUser(request) {
