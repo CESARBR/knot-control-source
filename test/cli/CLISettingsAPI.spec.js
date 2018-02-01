@@ -17,6 +17,10 @@ const test = around(tape)
         'aea3138d-a43e-45c6-9cd6-626c77790005',
         '427eaeced6dca774e4c62409074a256f04701f8d',
       )),
+      getGateway: sinon.stub().resolves(new Credentials(
+        'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+        '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+      )),
       configureCloud: sinon.stub().resolves(),
       setUser: sinon.stub().resolves(),
       setGateway: sinon.stub().resolves(),
@@ -71,6 +75,25 @@ test('getUser() returns Credentials returned by SettingsService', async (t, cliS
   );
 
   const actualCredentials = await cliSettingsAPI.getUser();
+
+  t.deepEquals(actualCredentials, expectedCredentials);
+  t.end();
+});
+
+test('getGateway() calls SettingsService.getGateway()', async (t, cliSettingsAPI) => {
+  await cliSettingsAPI.getGateway();
+
+  t.true(cliSettingsAPI.settingsService.getGateway.called);
+  t.end();
+});
+
+test('getGateway() returns Credentials returned by SettingsService', async (t, cliSettingsAPI) => {
+  const expectedCredentials = new Credentials(
+    'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
+    '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
+  );
+
+  const actualCredentials = await cliSettingsAPI.getGateway();
 
   t.deepEquals(actualCredentials, expectedCredentials);
   t.end();

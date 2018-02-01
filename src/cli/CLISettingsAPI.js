@@ -19,6 +19,10 @@ class CLISettingsAPI {
     return this.settingsService.getUser();
   }
 
+  async getGateway() {
+    return this.settingsService.getGateway();
+  }
+
   async configureCloud(hostname, port) {
     const request = new ConfigureCloudRequest(hostname, port);
     await this.settingsService.configureCloud(request);

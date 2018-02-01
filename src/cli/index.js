@@ -2,6 +2,7 @@
 import IsReadyInteractor from 'interactors/IsReadyInteractor';
 import GetCloudInteractor from 'interactors/GetCloudInteractor';
 import GetUserInteractor from 'interactors/GetUserInteractor';
+import GetGatewayInteractor from 'interactors/GetGatewayInteractor';
 import ConfigureCloudInteractor from 'interactors/ConfigureCloudInteractor';
 import SetUserInteractor from 'interactors/SetUserInteractor';
 import SetGatewayInteractor from 'interactors/SetGatewayInteractor';
@@ -20,6 +21,7 @@ const settingsStoreInitializer = new JsonSettingsStoreInitializer(SETTINGS_FILE)
 const isReadyInteractor = new IsReadyInteractor(settingsStore);
 const getCloudInteractor = new GetCloudInteractor(settingsStore);
 const getUserInteractor = new GetUserInteractor(settingsStore);
+const getGatewayInteractor = new GetGatewayInteractor(settingsStore);
 const configureCloudInteractor = new ConfigureCloudInteractor(settingsStore);
 const setUserInteractor = new SetUserInteractor(settingsStore);
 const setGatewayInteractor = new SetGatewayInteractor(settingsStore);
@@ -27,6 +29,7 @@ const settingsService = new SettingsService(
   isReadyInteractor,
   getCloudInteractor,
   getUserInteractor,
+  getGatewayInteractor,
   configureCloudInteractor,
   setUserInteractor,
   setGatewayInteractor,
