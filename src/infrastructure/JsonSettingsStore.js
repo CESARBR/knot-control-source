@@ -31,6 +31,11 @@ class JsonSettingsStore {
     return settings.user ? new Credentials(settings.user.uuid, settings.user.token) : null;
   }
 
+  async getGateway() {
+    const settings = await this.getSettings();
+    return settings.gateway ? new Credentials(settings.gateway.uuid, settings.gateway.token) : null;
+  }
+
   async setCloud(address) {
     const settings = await this.getSettings();
     settings.cloud = address;
