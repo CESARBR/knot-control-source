@@ -68,7 +68,7 @@ class DBusSettingsServer {
       'Cloud',
       Object,
       this.settingsApi.getCloud.bind(this.settingsApi),
-      this.settingsApi.configureCloud.bind(this.settingsApi),
+      this.settingsApi.setCloud.bind(this.settingsApi),
     );
 
     createProperty(

@@ -1,7 +1,7 @@
 import State from 'entities/State';
 import InvalidStateError from 'entities/InvalidStateError';
 
-class ConfigureCloudInteractor {
+class SetCloudInteractor {
   constructor(settingsStore) {
     this.settingsStore = settingsStore;
   }
@@ -18,4 +18,4 @@ class ConfigureCloudInteractor {
   }
 }
 
-export default ConfigureCloudInteractor;
+export default SetCloudInteractor;

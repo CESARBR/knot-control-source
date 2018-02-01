@@ -1,4 +1,4 @@
-import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+import { SetCloudRequest } from 'services/SetCloudRequest';
 import { SetUserRequest } from 'services/SetUserRequest';
 import { SetGatewayRequest } from 'services/SetGatewayRequest';
 
@@ -23,9 +23,9 @@ class CLISettingsAPI {
     return this.settingsService.getGateway();
   }
 
-  async configureCloud(hostname, port) {
-    const request = new ConfigureCloudRequest(hostname, port);
-    await this.settingsService.configureCloud(request);
+  async setCloud(hostname, port) {
+    const request = new SetCloudRequest(hostname, port);
+    await this.settingsService.setCloud(request);
   }
 
   async setUser(uuid, token) {

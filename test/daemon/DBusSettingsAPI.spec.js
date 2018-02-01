@@ -3,7 +3,7 @@ import around from 'tape-around';
 import sinon from 'sinon';
 import DBusSettingsAPI from 'daemon/DBusSettingsAPI';
 import Address from 'entities/Address';
-import { ConfigureCloudRequest } from 'services/ConfigureCloudRequest';
+import { SetCloudRequest } from 'services/SetCloudRequest';
 import { SetUserRequest } from 'services/SetUserRequest';
 import { SetGatewayRequest } from 'services/SetGatewayRequest';
 import Credentials from 'entities/Credentials';
@@ -21,7 +21,7 @@ const test = around(tape)
         'a79e0e9e-43b3-4c39-96c3-12a8132f0000',
         '32c834929f24e0a5603bdb1f7420be9f6f7d84bc',
       )),
-      configureCloud: sinon.stub().resolves(),
+      setCloud: sinon.stub().resolves(),
       setUser: sinon.stub().resolves(),
       setGateway: sinon.stub().resolves(),
     };
@@ -97,26 +97,26 @@ test('getGateway() returns Credentials returned by SettingsService', async (t, d
   t.end();
 });
 
-test('configureCloud() calls SettingsService.configureCloud()', async (t, dbusSettingsAPI) => {
+test('setCloud() calls SettingsService.setCloud()', async (t, dbusSettingsAPI) => {
   const address = {
     hostname: 'localhost',
     port: 3000,
   };
-  await dbusSettingsAPI.configureCloud(address);
+  await dbusSettingsAPI.setCloud(address);
 
-  t.true(dbusSettingsAPI.settingsService.configureCloud.called);
+  t.true(dbusSettingsAPI.settingsService.setCloud.called);
   t.end();
 });
 
-test('configureCloud() pass request with received arguments', async (t, dbusSettingsAPI) => {
+test('setCloud() pass request with received arguments', async (t, dbusSettingsAPI) => {
   const address = {
     hostname: 'localhost',
     port: 3000,
   };
-  await dbusSettingsAPI.configureCloud(address);
+  await dbusSettingsAPI.setCloud(address);
 
-  const expectedRequest = new ConfigureCloudRequest('localhost', 3000);
-  const actualRequest = dbusSettingsAPI.settingsService.configureCloud.getCall(0).args[0];
+  const expectedRequest = new SetCloudRequest('localhost', 3000);
+  const actualRequest = dbusSettingsAPI.settingsService.setCloud.getCall(0).args[0];
   t.deepEqual(actualRequest, expectedRequest);
   t.end();
 });
