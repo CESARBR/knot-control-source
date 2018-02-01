@@ -21,6 +21,11 @@ class DBusSettingsAPI {
     return configuration || {};
   }
 
+  async getGateway() {
+    const configuration = await this.settingsService.getGateway();
+    return configuration || {};
+  }
+
   async configureCloud(address) {
     const request = new ConfigureCloudRequest(address.hostname, address.port);
     await this.settingsService.configureCloud(request);
